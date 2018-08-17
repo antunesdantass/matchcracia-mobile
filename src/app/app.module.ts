@@ -11,16 +11,10 @@ import { HomePage } from '../pages/home/home';
 import { TabsPage } from '../pages/tabs/tabs';
 import { LeisPage } from './../pages/leis/leis';
 import { MyApp } from './app.component';
-import { AppComponentsModule } from './components/components.module';
 
 @NgModule({
   declarations: [MyApp, AboutPage, ContactPage, HomePage, TabsPage, LeisPage],
-  imports: [
-    BrowserModule,
-    IonicModule.forRoot(MyApp),
-    FlexLayoutModule,
-    AppComponentsModule,
-  ],
+  imports: [BrowserModule, FlexLayoutModule, IonicModule.forRoot(MyApp)],
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
