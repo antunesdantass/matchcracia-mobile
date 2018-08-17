@@ -10,10 +10,19 @@ import { ContactPage } from '../pages/contact/contact';
 import { HomePage } from '../pages/home/home';
 import { TabsPage } from '../pages/tabs/tabs';
 import { LeisPage } from './../pages/leis/leis';
+import { PerfilPage } from './../pages/perfil/perfil';
 import { MyApp } from './app.component';
 
 @NgModule({
-  declarations: [MyApp, AboutPage, ContactPage, HomePage, TabsPage, LeisPage],
+  declarations: [
+    MyApp,
+    AboutPage,
+    ContactPage,
+    HomePage,
+    TabsPage,
+    LeisPage,
+    PerfilPage,
+  ],
   imports: [BrowserModule, FlexLayoutModule, IonicModule.forRoot(MyApp)],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -23,6 +32,7 @@ import { MyApp } from './app.component';
     HomePage,
     TabsPage,
     LeisPage,
+    PerfilPage,
   ],
   providers: [
     StatusBar,
