@@ -9,14 +9,12 @@ import { AboutPage } from '../pages/about/about';
 import { ContactPage } from '../pages/contact/contact';
 import { HomePage } from '../pages/home/home';
 import { TabsPage } from '../pages/tabs/tabs';
-
-import { CardComponent } from './components/card/card.component';
 import { LeisPage } from './../pages/leis/leis';
 import { MyApp } from './app.component';
 
 @NgModule({
   declarations: [MyApp, AboutPage, ContactPage, HomePage, TabsPage, LeisPage],
-  imports: [BrowserModule, IonicModule.forRoot(MyApp), FlexLayoutModule],
+  imports: [BrowserModule, FlexLayoutModule, IonicModule.forRoot(MyApp)],
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
@@ -25,15 +23,12 @@ import { MyApp } from './app.component';
     HomePage,
     TabsPage,
     LeisPage,
-    CardComponent
   ],
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    { provide: ErrorHandler, useClass: IonicErrorHandler },
   ],
-  exports: [
-    CardComponent
-  ]
+  exports: [],
 })
 export class AppModule {}

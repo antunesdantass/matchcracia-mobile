@@ -1,4 +1,4 @@
-import { Component, Input } from "../../../../node_modules/@angular/core";
+import { Component, Input } from "@angular/core";
 
 @Component({
     selector: 'card',
