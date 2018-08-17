@@ -1,0 +1,21 @@
+<ion-card>
+    <ion-row>
+        <ion-card-header>
+            {{ lei.titulo }}
+        </ion-card-header>
+    </ion-row>
+
+    <ion-row>
+        <ion-item>
+            <ion-avatar>
+                <img src="{{ deputado.foto }}">
+            </ion-avatar>
+            <p> {{ deputado.nome }} </p>
+        </ion-item>
+    </ion-row>
+
+    <ion-card-content>
+        {{ lei.resumo }}
+    </ion-card-content>
+
+</ion-card>
