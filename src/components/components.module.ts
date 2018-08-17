@@ -1,11 +1,10 @@
 import { NgModule } from '@angular/core';
 
 import { CardComponent } from './card/card.component';
-import { SwipeIonContentComponent } from './swipe-ion-content/swipe-ion-content';
 
 @NgModule({
-  declarations: [SwipeIonContentComponent, CardComponent],
+  declarations: [CardComponent],
   imports: [],
-  exports: [SwipeIonContentComponent, CardComponent],
+  exports: [CardComponent],
 })
 export class ComponentsModule {}
