@@ -4,23 +4,23 @@
   See http://ionicframework.com/docs/components/#navigation for more info on
   Ionic pages and navigation.
 -->
-<ion-header>
-
-  <ion-navbar>
-    <ion-title>Leis</ion-title>
-  </ion-navbar>
-
-</ion-header>
-
-
 <ion-content padding>
   <div class="card-container" fxLayout="row" fxLayoutAlign="center center">
     <div>
       CARD
     </div>
   </div>
-  <div class="buttons-container" fxLayout="row" fxLayoutAlign="space-around center">
-    <div>BUTTON 1</div>
-    <div>BUTTON 2</div>
+  <div class="buttons-container" fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="1rem">
+    <button ion-fab color="danger">
+      <ion-icon name="close"></ion-icon>
+    </button>
+    <div class="information">
+      <button ion-fab mini color="light">
+        <ion-icon name="information"></ion-icon>
+      </button>
+    </div>
+    <button ion-fab color="success">
+      <ion-icon name="heart"></ion-icon>
+    </button>
   </div>
 </ion-content>
