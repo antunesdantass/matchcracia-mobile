@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { NavController } from 'ionic-angular';
 
 /**
  * Generated class for the SwipeIonContentComponent component.
@@ -8,15 +9,16 @@ import { Component } from '@angular/core';
  */
 @Component({
   selector: 'swipe-ion-content',
-  templateUrl: 'swipe-ion-content.html'
+  templateUrl: 'swipe-ion-content.html',
 })
 export class SwipeIonContentComponent {
+  constructor(public navCtrl: NavController) {}
 
-  text: string;
-
-  constructor() {
-    console.log('Hello SwipeIonContentComponent Component');
-    this.text = 'Hello World';
+  swipeEvent(e) {
+    if (e.direction == '2') {
+      this.navCtrl.parent.select(2);
+    } else if (e.direction == '4') {
+      this.navCtrl.parent.select(0);
+    }
   }
-
 }
