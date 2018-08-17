@@ -5,6 +5,10 @@
   Ionic pages and navigation.
 -->
 <ion-content padding>
-  <div class="picture-container">Picture</div>
+  <div class="picture-container">
+    <content-loader [width]="window.innerWidth" [height]="window.innerHeight * 0.5">
+      <svg:circle r="25%" cy="50%" cx="50%" width="100%" height="100%"></svg:circle>
+    </content-loader>
+  </div>
   <div>OK</div>
 </ion-content>
