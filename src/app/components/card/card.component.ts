@@ -1,7 +1,11 @@
-import { Component } from "../../../../node_modules/@angular/core";
+import { Component, Input } from "../../../../node_modules/@angular/core";
 
 @Component({
     selector: 'card',
     templateUrl: 'card.component.html'
 })
-export class CardComponent {}
+export class CardComponent {
+    
+    @Input() deputado;
+    @Input() lei;
+}
