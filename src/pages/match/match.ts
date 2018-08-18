@@ -1,6 +1,8 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
+import { TabsPage } from './../tabs/tabs';
+
 /**
  * Generated class for the MatchPage page.
  *
@@ -27,7 +29,7 @@ export class MatchPage implements OnInit, OnDestroy {
     if (this.navCtrl.length()) {
       return this.navCtrl.pop();
     }
-    return this.navCtrl.goToRoot();
+    return this.navCtrl.goToRoot(TabsPage);
   }
 
   ngOnInit() {
