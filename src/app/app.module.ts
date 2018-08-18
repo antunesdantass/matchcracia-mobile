@@ -10,11 +10,14 @@ import { ContactPage } from '../pages/contact/contact';
 import { HomePage } from '../pages/home/home';
 import { TabsPage } from '../pages/tabs/tabs';
 import { LeisPage } from './../pages/leis/leis';
+import { CardComponent } from './../components/card/card.component'
 import { MyApp } from './app.component';
+import { SwingModule } from '../../node_modules/angular2-swing';
+import { CardsComponent } from '../components/cards/cards';
 
 @NgModule({
-  declarations: [MyApp, AboutPage, ContactPage, HomePage, TabsPage, LeisPage],
-  imports: [BrowserModule, FlexLayoutModule, IonicModule.forRoot(MyApp)],
+  declarations: [MyApp, AboutPage, ContactPage, HomePage, TabsPage, LeisPage, CardComponent, CardsComponent],
+  imports: [BrowserModule, FlexLayoutModule, IonicModule.forRoot(MyApp), SwingModule],
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
@@ -23,6 +26,8 @@ import { MyApp } from './app.component';
     HomePage,
     TabsPage,
     LeisPage,
+    CardComponent,
+    CardsComponent
   ],
   providers: [
     StatusBar,

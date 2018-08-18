@@ -1,21 +1,23 @@
-<ion-card>
+<ion-card #mycards1 swing-card class="card-component">
     <ion-row>
         <ion-card-header>
-            {{ lei.titulo }}
+            <div class="text-center">
+                {{ lei.siglaTipo }} {{lei.numero}} / {{ lei.ano }}
+            </div>
         </ion-card-header>
     </ion-row>
 
     <ion-row>
         <ion-item>
-            <ion-avatar>
-                <img src="{{ deputado.foto }}">
+            <ion-avatar item-start>
+                <img src="{{ lei.autores[0].foto }}">
             </ion-avatar>
-            <p> {{ deputado.nome }} </p>
+            <h2> {{ lei.autores[0].nome }} </h2>
         </ion-item>
     </ion-row>
 
     <ion-card-content>
-        {{ lei.resumo }}
+        {{ lei.ementa }}
     </ion-card-content>
 
 </ion-card>

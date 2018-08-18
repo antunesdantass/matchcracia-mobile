@@ -6,9 +6,8 @@
 -->
 <ion-content padding>
   <div class="card-container" fxLayout="row" fxLayoutAlign="center center">
-    <div>
-      CARD
-    </div>
+      <cards [cards]="lei" [onSwipe]="onSwipe" style="display: contents">
+      </cards>
   </div>
   <div class="buttons-container" fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="1rem">
     <button ion-fab color="danger">

@@ -1,0 +1,35 @@
+<ion-content>
+  <div swing-stack #myswing1 [stackConfig]="stackConfig" id="card-stack"
+        (throwoutleft)="onThrow(false)" (throwoutright)="onThrow(true)">
+    <ion-card #mycards1 swing-card *ngFor="let lei of cards">
+        <div class="container-imagem">
+            <span class="helper"></span>
+            <img class="imagens" src="/assets/imgs/aprovo.png" #aprovo>
+        </div>
+        <div class="container-imagem">
+            <span class="helper"></span>
+            <img class="imagens" src="/assets/imgs/reprovo.png" #reprovo>
+        </div>
+        <ion-card-header text-center>
+            <div class="text-center">
+                {{ lei.siglaTipo }} {{lei.numero}} / {{ lei.ano }}
+            </div>
+        </ion-card-header>
+        <ion-card-content>
+            {{ lei.ementa }}
+            <ion-item class="deputado">
+                <ion-avatar item-start>
+                    <img src="{{ lei.autores[0].foto }}" style="width: 60px; height: 60px;">
+                </ion-avatar>
+                <div fxLayout="column">
+                    <div fxFlex="50">&nbsp;</div>
+                    <div fxFlex="50">
+                            <hr/>
+                            <p> {{ lei.autores[0].nome }} </p>
+                    </div>
+                </div>
+            </ion-item>
+        </ion-card-content>
+    </ion-card>
+  </div>
+</ion-content>
