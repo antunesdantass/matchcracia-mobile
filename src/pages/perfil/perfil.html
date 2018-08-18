@@ -7,13 +7,19 @@
 <ion-content padding>
   <div class="picture-container">
     <content-loader [width]="window.innerWidth" [height]="window.innerHeight * 0.4">
-      <svg:circle r="25%" cy="50%" cx="50%" width="100%" height="100%"></svg:circle>
+      <svg:circle r="40%" cy="50%" cx="50%" width="100%" height="100%"></svg:circle>
     </content-loader>
   </div>
   <div class="info-container">
-    <content-loader [width]="window.innerWidth" [height]="window.innerHeight * 0.5">
-      <svg:rect width="100%" height="2em"></svg:rect>
-      <svg:rect x="15%" y="3em" width="70%" height="2em"></svg:rect>
-    </content-loader>
+    <h2 class="info-text"> {{usuario.nome}}, {{usuario.idade}} </h2>
+    <h5 class="info-text"> {{usuario.endereco.cidade}} - {{usuario.endereco.estado}} </h5>
+  </div>
+  <div class="config-container" fxLayout="row" fxLayoutAlign="center" fxLayoutGap="1rem">
+    <button ion-fab color="light">
+      <ion-icon name="md-create"></ion-icon>
+    </button>
+    <button ion-fab color="light">
+      <ion-icon name="construct"></ion-icon>
+    </button>
   </div>
 </ion-content>

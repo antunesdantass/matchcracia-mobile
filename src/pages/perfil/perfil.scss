@@ -1,9 +1,20 @@
 page-perfil {
   .picture-container {
+    margin-top: 50px;
     height: 40%;
   }
 
   .info-container {
     padding-top: 1em;
+  }
+
+  .config-container {
+    height: 20%;
+  }
+
+  .info-text {
+    text-align: center;
+    margin-bottom: 5px;
+    margin-top: 5px;
   }
 }

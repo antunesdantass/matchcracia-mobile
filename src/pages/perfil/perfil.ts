@@ -15,8 +15,18 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class PerfilPage {
   window: any = window;
+  usuario: any = {};
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {}
+  constructor(public navCtrl: NavController, public navParams: NavParams) {
+    this.usuario = {
+      nome: "João",
+      idade: 20,
+      endereco: {
+        cidade: "Campina Grande",
+        estado: "PB"
+      }
+    };
+  }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad PerfilPage');
