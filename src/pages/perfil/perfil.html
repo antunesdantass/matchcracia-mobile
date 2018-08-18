@@ -13,7 +13,7 @@
     <h5 class="info-text location"> {{usuario.endereco.cidade}} - {{usuario.endereco.estado}} </h5>
   </div>
   <div class="config-container" fxLayout="row" fxLayoutAlign="center" fxLayoutGap="4rem">
-    <button ion-fab color="light">
+    <button ion-fab color="light" (click)="editarPerfil()">
       <ion-icon name="md-create"></ion-icon>
     </button>
     <button ion-fab color="light">

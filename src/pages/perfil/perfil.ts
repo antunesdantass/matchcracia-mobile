@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { EditarPerfilPage } from '../editar-perfil/editarPerfil';
 
 /**
  * Generated class for the PerfilPage page.
@@ -26,6 +27,11 @@ export class PerfilPage {
         estado: "PB"
       }
     };
+  }
+
+  editarPerfil() {
+    console.log("entrou");
+    this.navCtrl.push(EditarPerfilPage, this.usuario);
   }
 
   ionViewDidLoad() {

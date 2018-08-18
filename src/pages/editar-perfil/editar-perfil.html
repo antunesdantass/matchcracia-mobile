@@ -1,0 +1,29 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Editar Perfil</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content>
+  <div class="picture-container">
+    <img src="https://goo.gl/PkL3Gh">
+  </div>
+  <ion-list>
+    <ion-item>
+      <ion-label color="primary" floating ng-model="usuario.nome">Nome</ion-label>
+      <ion-input></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label color="primary" floating ng-model="usuario.idade">Idade</ion-label>
+      <ion-input type="number"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label color="primary" floating ng-model="usuario.endereco.cidade">Cidade</ion-label>
+      <ion-input></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label color="primary" floating ng-model="usuario.estado">Estado</ion-label>
+      <ion-input></ion-input>
+    </ion-item>
+  </ion-list>
+  <button ion-button full (click)="salvar()">Salvar</button>
+</ion-content>
