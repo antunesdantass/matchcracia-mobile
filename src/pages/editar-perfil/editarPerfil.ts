@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { LeisPage } from '../leis/leis';
 
 /**
  * Generated class for the EditarPerfilPage page.
@@ -22,7 +23,10 @@ export class EditarPerfilPage {
   }
 
   salvar() {
-    this.navCtrl.pop();
+    if (this.navCtrl.canGoBack()) {
+      return this.navCtrl.pop();
+    }
+    return this.navCtrl.first();
   }
 
   ionViewDidLoad() {
