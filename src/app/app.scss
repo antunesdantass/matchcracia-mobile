@@ -33,3 +33,9 @@ ion-icon {
     mask-image: url(../../assets/imgs/fire.svg);
   }
 }
+
+.truncate {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

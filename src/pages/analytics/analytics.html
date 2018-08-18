@@ -10,5 +10,30 @@
     <div padding-top class="image-container">
       <app-image src="http://www.camara.leg.br/internet/deputado/bandep/74041.jpg" alt="OK"></app-image>
     </div>
+    <div class="matches-container">
+      <div *ngIf="matches; else noMatch">
+        <h4 text-center paddin-top>Seus matches</h4>
+        <ion-list>
+          <button ion-item *ngFor="let lei of matches">
+            <div fxLayout="column" fxLayoutGap="0.125em">
+              <div fxLayout="row">
+                <div fxFlex="33">
+                  <h5 class="truncate">({{lei.statusProposicao.orgao.sigla}}) {{lei.siglaTipo}}</h5>
+                </div>
+                <div padding-left class="truncate">
+                  <h6 class="truncate">{{lei.statusProposicao.descricaoSituacao}}</h6>
+                </div>
+              </div>
+              <div fxLayout="row">
+                <span class="truncate">{{lei.ementa}}</span>
+              </div>
+            </div>
+          </button>
+        </ion-list>
+      </div>
+      <ng-template #noMatch>
+        <h4 text-center paddin-top>Você ainda não possui matches...</h4>
+      </ng-template>
+    </div>
   </div>
 </ion-content>
