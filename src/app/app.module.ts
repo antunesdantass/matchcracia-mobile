@@ -7,6 +7,7 @@ import { ContentLoaderModule } from '@netbasal/content-loader';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 
 import { TabsPage } from '../pages/tabs/tabs';
+import { ComponentsModule } from './../components/components.module';
 import { AnalyticsPage } from './../pages/analytics/analytics';
 import { LeisPage } from './../pages/leis/leis';
 import { PerfilPage } from './../pages/perfil/perfil';
@@ -19,6 +20,7 @@ import { MyApp } from './app.component';
     FlexLayoutModule,
     ContentLoaderModule,
     IonicModule.forRoot(MyApp),
+    ComponentsModule,
   ],
   bootstrap: [IonicApp],
   entryComponents: [MyApp, TabsPage, LeisPage, PerfilPage, AnalyticsPage],

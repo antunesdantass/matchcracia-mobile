@@ -1,0 +1,8 @@
+<!-- Generated template for the ImageComponent component -->
+<div fxLayout="row" fxLayoutAlign="center center">
+  <img class="image-class" [src]="src" [alt]="alt" (load)="toggleLoaded()">
+</div>
+<content-loader *ngIf="!loaded" [width]="window.innerWidth" [height]="150">
+  <svg:rect class="rect-image"></svg:rect>
+  <svg:circle class="circle-image"></svg:circle>
+</content-loader>
