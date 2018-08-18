@@ -1,0 +1,35 @@
+<!--
+  Generated template for the MatchPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-content padding>
+  <div fxLayout="column" fxLayoutGap="2em" fxLayoutAlign="space-around center">
+    <div class="icone-container img-size">
+      <img class="img-responsivity" src="assets/imgs/icone-match.png" alt="logo">
+    </div>
+
+    <div class="match-container">
+      <img src="assets/imgs/deumatch.png" alt="deumatch">
+      <h6 class="match-text">A lei que você aprovou também foi aprovada oficialmente!</h6>
+      <div class="lei-title">
+        <h1>{{lei.siglaTipo}} {{lei.numero}}/{{lei.ano}}</h1>
+      </div>
+      <div fxLayout="row" fxLayoutAlign="space-around center">
+        <button ion-button class="match-button">
+          <div class="match-icon">
+            <ion-icon name="eye"></ion-icon>
+          </div>
+          <h4 class="white-text">Ver Lei</h4>
+        </button>
+        <button ion-button class="match-button" (click)="redirect()">
+          <div class="match-icon">
+            <ion-icon name="arrow-forward"></ion-icon>
+          </div>
+          <h4 class="white-text">Continuar</h4>
+        </button>
+      </div>
+    </div>
+  </div>
+</ion-content>
