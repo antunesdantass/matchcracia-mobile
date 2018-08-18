@@ -9,6 +9,7 @@ page-perfil {
   }
 
   .config-container {
+    margin-top: 20px;
     height: 20%;
   }
 
@@ -16,5 +17,17 @@ page-perfil {
     text-align: center;
     margin-bottom: 5px;
     margin-top: 5px;
+  }
+
+  img {
+    display: block;
+    border-radius: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    width: 70%;
+    height: 90%;
+    padding:2px;
+    border:2px solid #8E8E8E;
+    background-color:#FFFFFF;
   }
 }
