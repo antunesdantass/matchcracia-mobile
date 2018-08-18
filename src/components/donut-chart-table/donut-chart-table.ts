@@ -18,7 +18,7 @@ export class DonutChartTableComponent {
   labels: number[] = [];
   doughnutChartType: string = 'doughnut';
 
-  doughnutOptions:any = {
+  doughnutOptions: any = {
     responsive: true,
     maintainAspectRatio: false,
     tooltips: {
