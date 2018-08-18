@@ -5,6 +5,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
 import { ContentLoaderModule } from '@netbasal/content-loader';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
+import { ChartsModule } from 'ng2-charts/charts/charts';
 
 import { TabsPage } from '../pages/tabs/tabs';
 import { ComponentsModule } from './../components/components.module';
@@ -18,6 +19,7 @@ import { MyApp } from './app.component';
   imports: [
     BrowserModule,
     FlexLayoutModule,
+    ChartsModule,
     ContentLoaderModule,
     IonicModule.forRoot(MyApp),
     ComponentsModule,

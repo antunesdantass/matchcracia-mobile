@@ -5,13 +5,13 @@
   Ionic pages and navigation.
 -->
 <ion-content padding>
-  <div fxLayout="column" class="analytics-container">
+  <div *ngIf="matches; else noMatch" fxLayout="column" class="analytics-container">
     <h4 text-center>Essa potência lhe representa!</h4>
     <div padding-top class="image-container">
-      <app-image src="http://www.camara.leg.br/internet/deputado/bandep/74041.jpg" alt="OK"></app-image>
+      <app-image [src]="fotaDaMinhaPotencia" alt="Potencia"></app-image>
     </div>
     <div class="matches-container">
-      <div *ngIf="matches; else noMatch">
+      <div *ngIf="matches">
         <h4 text-center paddin-top>Seus matches</h4>
         <ion-list>
           <button ion-item *ngFor="let lei of matches">
@@ -31,9 +31,17 @@
           </button>
         </ion-list>
       </div>
-      <ng-template #noMatch>
-        <h4 text-center paddin-top>Você ainda não possui matches...</h4>
-      </ng-template>
+    </div>
+    <div class="charts-container">
+      <donut-chart-table [data]="donutSituacaoData.data" [labels]="donutSituacaoData.labels"></donut-chart-table>
     </div>
   </div>
+  <ng-template #noMatch>
+    <div fxLayout="column" fxLayoutAlign="space-around center" fxFlex fxLayoutGap="2em">
+      <h4 text-center>Queria lhe mostrar coisas legais, mas você ainda não deu match...</h4>
+      <div text-center class="sad-icon">
+        <ion-icon name="sad"></ion-icon>
+      </div>
+    </div>
+  </ng-template>
 </ion-content>

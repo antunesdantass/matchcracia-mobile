@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core';
+import { FlexLayoutModule } from '@angular/flex-layout';
 import { IonicPageModule } from 'ionic-angular';
 import { ChartsModule } from 'ng2-charts';
 
@@ -10,6 +11,7 @@ import { AnalyticsPage } from './analytics';
   imports: [
     IonicPageModule.forChild(AnalyticsPage),
     ChartsModule,
+    FlexLayoutModule,
     ComponentsModule,
   ],
 })
