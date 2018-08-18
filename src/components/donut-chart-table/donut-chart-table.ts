@@ -21,6 +21,9 @@ export class DonutChartTableComponent {
   doughnutOptions: any = {
     responsive: true,
     maintainAspectRatio: false,
+    legend: {
+      position: 'bottom',
+    },
     tooltips: {
       enabled: true,
       backgroundColor: '#090044',
