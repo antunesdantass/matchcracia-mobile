@@ -1,3 +1,4 @@
+import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { IonicPageModule } from 'ionic-angular';
@@ -13,6 +14,7 @@ import { AnalyticsPage } from './analytics';
     ChartsModule,
     FlexLayoutModule,
     ComponentsModule,
+    HttpClientModule,
   ],
 })
 export class AnalyticsPageModule {}

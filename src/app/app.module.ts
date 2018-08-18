@@ -1,3 +1,4 @@
+import { HttpClientModule } from '@angular/common/http';
 import { ErrorHandler, NgModule } from '@angular/core';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { BrowserModule } from '@angular/platform-browser';
@@ -23,6 +24,7 @@ import { MyApp } from './app.component';
     ContentLoaderModule,
     IonicModule.forRoot(MyApp),
     ComponentsModule,
+    HttpClientModule,
   ],
   bootstrap: [IonicApp],
   entryComponents: [MyApp, TabsPage, LeisPage, PerfilPage, AnalyticsPage],

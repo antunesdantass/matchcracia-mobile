@@ -18,12 +18,31 @@ export class DonutChartTableComponent {
   labels: number[] = [];
   doughnutChartType: string = 'doughnut';
 
-  // events
-  chartClicked(e: any): void {
-    console.log(e);
-  }
+  doughnutOptions:any = {
+    responsive: true,
+    maintainAspectRatio: false,
+    tooltips: {
+      enabled: true,
+      backgroundColor: '#090044',
+      titleFontColor: '#ffffff',
+      bodyFontColor: '#ffffff',
+      xPadding: 20,
+      yPadding: 20,
+      displayColors: false,
+    },
+  };
 
-  chartHovered(e: any): void {
-    console.log(e);
-  }
+  doughnutChartColors: any[] = [
+    {
+      borderWidth: 0,
+      backgroundColor: [
+        '#090044',
+        '#B1EDE8',
+        '#6D7771',
+        '#A1A2A2',
+        '#DECEB0',
+        '#8B7448',
+      ],
+    },
+  ];
 }

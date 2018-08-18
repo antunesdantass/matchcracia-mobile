@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { IonicPage } from 'ionic-angular';
-
-const matches = require('../../assets/mockLeis.json');
+import { Subscription } from 'rxjs/Subscription';
+import { includes } from 'lodash';
 
 /**
  * Generated class for the AnalyticsPage page.
@@ -15,9 +16,12 @@ const matches = require('../../assets/mockLeis.json');
   selector: 'page-analytics',
   templateUrl: 'analytics.html',
 })
-export class AnalyticsPage implements OnInit {
+export class AnalyticsPage implements OnInit, OnDestroy {
   matches: any[];
+  matchesSubscription: Subscription;
   fotaDaMinhaPotencia = '';
+
+  constructor(private http: HttpClient) {}
 
   getFotaDaMinhaPotencia() {
     if (!this.matches) return null;
@@ -44,8 +48,8 @@ export class AnalyticsPage implements OnInit {
     const situacoesOcorrencias = {};
     const situacoes = this.matches
       .map(match => match.statusProposicao.descricaoSituacao)
-      .reduce((ac: string[], situacao: string) => {
-        if (ac.includes(situacao)) {
+      .reduce((ac: Array<string>, situacao: string) => {
+        if (includes(ac, situacao)) {
           situacoesOcorrencias[situacao]++;
           return ac;
         }
@@ -60,8 +64,15 @@ export class AnalyticsPage implements OnInit {
   }
 
   ngOnInit() {
-    this.matches = matches;
+    this.matchesSubscription = this.http
+      .get<any[]>('assets/mockLeis.json')
+      .subscribe((dados: any[]) => {
+        this.matches = dados;
+        this.fotaDaMinhaPotencia = this.getFotaDaMinhaPotencia();
+      });
+  }
 
-    this.fotaDaMinhaPotencia = this.getFotaDaMinhaPotencia();
+  ngOnDestroy(): void {
+    this.matchesSubscription.unsubscribe();
   }
 }
