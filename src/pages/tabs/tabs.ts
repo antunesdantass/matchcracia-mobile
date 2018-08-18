@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 
-import { ContactPage } from '../contact/contact';
+import { AnalyticsPage } from './../analytics/analytics';
 import { LeisPage } from './../leis/leis';
 import { PerfilPage } from './../perfil/perfil';
 
@@ -10,7 +10,7 @@ import { PerfilPage } from './../perfil/perfil';
 export class TabsPage {
   perfilRoot = PerfilPage;
   leisRoot = LeisPage;
-  infoRoot = ContactPage;
+  infoRoot = AnalyticsPage;
 
   constructor() {}
 }
