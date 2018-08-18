@@ -1,0 +1,45 @@
+page-match {
+  ion-content {
+    background-image: url('../../assets/imgs/matchBackground.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+  }
+
+  .icone-container {
+    width: 80%;
+    padding-left: 10%;
+    padding-right: 10%;
+    height: 15em;
+  }
+
+  .white-text {
+    color: white;
+    text-align: center;
+  }
+
+  .match-text {
+    @extend .white-text;
+    font-size: 0.875em;
+  }
+
+  .lei-title {
+    @extend .white-text;
+    padding-top: 3em;
+    padding-bottom: 3em;
+  }
+
+  .match-icon {
+    @extend .white-text;
+    font-size: 3.75em;
+  }
+
+  .match-button,
+  .match-button > .button-inner {
+    display: block;
+    background-color: rgba(0, 0, 0, 0);
+    width: auto;
+    height: auto;
+  }
+}

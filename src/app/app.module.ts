@@ -12,11 +12,19 @@ import { TabsPage } from '../pages/tabs/tabs';
 import { ComponentsModule } from './../components/components.module';
 import { AnalyticsPage } from './../pages/analytics/analytics';
 import { LeisPage } from './../pages/leis/leis';
+import { MatchPage } from './../pages/match/match';
 import { PerfilPage } from './../pages/perfil/perfil';
 import { MyApp } from './app.component';
 
 @NgModule({
-  declarations: [MyApp, TabsPage, LeisPage, PerfilPage, AnalyticsPage],
+  declarations: [
+    MyApp,
+    TabsPage,
+    LeisPage,
+    PerfilPage,
+    AnalyticsPage,
+    MatchPage,
+  ],
   imports: [
     BrowserModule,
     FlexLayoutModule,
@@ -27,7 +35,14 @@ import { MyApp } from './app.component';
     HttpClientModule,
   ],
   bootstrap: [IonicApp],
-  entryComponents: [MyApp, TabsPage, LeisPage, PerfilPage, AnalyticsPage],
+  entryComponents: [
+    MyApp,
+    TabsPage,
+    LeisPage,
+    PerfilPage,
+    AnalyticsPage,
+    MatchPage,
+  ],
   providers: [
     StatusBar,
     SplashScreen,
