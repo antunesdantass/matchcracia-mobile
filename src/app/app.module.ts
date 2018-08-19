@@ -21,18 +21,18 @@ import { PerfilPage } from './../pages/perfil/perfil';
 import { MyApp } from './app.component';
 
 import {DbService} from '../providers/db.provider';
+import { AnalyticsPageModule } from '../pages/analytics/analytics.module';
+import { DetalhesLeiPageModule } from '../pages/detalhes-lei/detalhes-lei.module';
+import { EditarPerfilPageModule } from '../pages/editar-perfil/editarPerfil.module';
+import { LeisPageModule } from '../pages/leis/leis.module';
+import { MatchPageModule } from '../pages/match/match.module';
+import { PerfilPageModule } from '../pages/perfil/perfil.module';
+import { CardsModule } from '../components/cards/cards.module';
 
 @NgModule({
   declarations: [
     MyApp,
-    TabsPage,
-    LeisPage,
-    PerfilPage,
-    EditarPerfilPage,
-    AnalyticsPage,
-    MatchPage,
-    CardsComponent,
-    DetalhesLeiPage,
+    TabsPage
   ],
   imports: [
     BrowserModule,
@@ -43,6 +43,13 @@ import {DbService} from '../providers/db.provider';
     ComponentsModule,
     HttpClientModule,
     SwingModule,
+    AnalyticsPageModule,
+    DetalhesLeiPageModule,
+    EditarPerfilPageModule,
+    LeisPageModule,
+    MatchPageModule,
+    PerfilPageModule,
+    CardsModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -61,7 +68,6 @@ import {DbService} from '../providers/db.provider';
     SplashScreen,
     { provide: ErrorHandler, useClass: IonicErrorHandler },
     DbService
-  ],
-  exports: [],
+  ]
 })
 export class AppModule {}

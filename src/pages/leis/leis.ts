@@ -4,6 +4,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
 import { DbService } from '../../providers/db.provider';
 import { MatchPage } from './../match/match';
+// import { CardsComponent } from './../../components/cards/cards';
 
 /**
  * Generated class for the LeisPage page.
