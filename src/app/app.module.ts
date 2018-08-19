@@ -5,19 +5,20 @@ import { BrowserModule } from '@angular/platform-browser';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
 import { ContentLoaderModule } from '@netbasal/content-loader';
+import { SwingModule } from 'angular2-swing';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { ChartsModule } from 'ng2-charts/charts/charts';
-import { SwingModule } from 'angular2-swing';
 
+import { CardsComponent } from '../components/cards/cards';
 import { TabsPage } from '../pages/tabs/tabs';
 import { ComponentsModule } from './../components/components.module';
 import { AnalyticsPage } from './../pages/analytics/analytics';
+import { DetalhesLeiPage } from './../pages/detalhes-lei/detalhes-lei';
+import { EditarPerfilPage } from './../pages/editar-perfil/editarPerfil';
 import { LeisPage } from './../pages/leis/leis';
 import { MatchPage } from './../pages/match/match';
 import { PerfilPage } from './../pages/perfil/perfil';
-import { EditarPerfilPage } from './../pages/editar-perfil/editarPerfil';
 import { MyApp } from './app.component';
-import { CardsComponent } from '../components/cards/cards';
 
 import {DbService} from '../providers/db.provider';
 
@@ -30,7 +31,8 @@ import {DbService} from '../providers/db.provider';
     EditarPerfilPage,
     AnalyticsPage,
     MatchPage,
-    CardsComponent
+    CardsComponent,
+    DetalhesLeiPage,
   ],
   imports: [
     BrowserModule,
@@ -40,7 +42,7 @@ import {DbService} from '../providers/db.provider';
     IonicModule.forRoot(MyApp),
     ComponentsModule,
     HttpClientModule,
-    SwingModule
+    SwingModule,
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -51,7 +53,8 @@ import {DbService} from '../providers/db.provider';
     EditarPerfilPage,
     AnalyticsPage,
     MatchPage,
-    CardsComponent
+    CardsComponent,
+    DetalhesLeiPage,
   ],
   providers: [
     StatusBar,

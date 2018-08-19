@@ -17,7 +17,7 @@
         <h1>{{lei.siglaTipo}} {{lei.numero}}/{{lei.ano}}</h1>
       </div>
       <div fxLayout="row" fxLayoutAlign="space-around center">
-        <button ion-button class="match-button">
+        <button ion-button class="match-button" (click)="goToDetalhesLei()">
           <div class="match-icon">
             <ion-icon name="eye"></ion-icon>
           </div>

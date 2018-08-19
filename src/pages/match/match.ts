@@ -1,6 +1,8 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
+import { DetalhesLeiPage } from './../detalhes-lei/detalhes-lei';
+
 /**
  * Generated class for the MatchPage page.
  *
@@ -28,6 +30,12 @@ export class MatchPage implements OnInit, OnDestroy {
       return this.navCtrl.pop();
     }
     return this.navCtrl.goToRoot({});
+  }
+
+  goToDetalhesLei() {
+    return this.navCtrl.push(DetalhesLeiPage, {
+      lei: JSON.stringify(this.lei),
+    });
   }
 
   ngOnInit() {

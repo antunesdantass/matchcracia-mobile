@@ -1,6 +1,6 @@
+import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import { HttpClient } from '@angular/common/http';
 
 import { MatchPage } from './../match/match';
 import { DbService } from '../../providers/db.provider';
@@ -31,12 +31,9 @@ export class LeisPage {
   }
 
   goToMatchPage() {
+    const lei = this.leis[this.leis.length - 1];
     this.navCtrl.push(MatchPage, {
-      lei: JSON.stringify({
-        siglaTipo: 'PL',
-        numero: 9469,
-        ano: 2078,
-      }),
+      lei: JSON.stringify(lei),
     });
   }
 }
