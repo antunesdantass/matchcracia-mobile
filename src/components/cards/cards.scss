@@ -35,6 +35,8 @@ cards {
         margin-right: 5px;
         margin-bottom: 5px;
         height: 29em;
+
+        font-size: 3vh !important;
     }
 
     ion-item {
@@ -80,4 +82,8 @@ cards {
       vertical-align: middle;
       height: 50%;
   } 
+}
+
+.texto-card {
+  vertical-align: middle;
 }
