@@ -19,6 +19,11 @@ button[ion-fab] {
     rgba(0, 0, 0, 0.1) 0px 4px 5px;
 }
 
+.scroll-content {
+  margin-bottom: 0 !important;
+  padding: 7px !important;
+}
+
 /*custom Ionicon icon*/
 ion-icon {
   &[class*='custom-'] {

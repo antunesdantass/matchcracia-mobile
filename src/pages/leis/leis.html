@@ -6,21 +6,16 @@
 -->
 <ion-content padding>
   <div class="card-container" fxLayout="row" fxLayoutAlign="center center">
-    <div>
-      CARD
-    </div>
+      <cards [cards]="leis" [onSwipe]="onSwipe" style="display: contents">
+      </cards>
   </div>
   <div class="buttons-container" fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="1rem">
-    <button ion-fab color="danger">
-      <ion-icon name="close"></ion-icon>
-    </button>
-    <div class="information">
-      <button ion-fab mini color="light">
-        <ion-icon name="information"></ion-icon>
-      </button>
+    <div ion-fab color="light" class="botao-like">
+        <img src="/assets/imgs/bx.png">
     </div>
-    <button ion-fab color="success" (click)="goToMatchPage()">
-      <ion-icon name="heart"></ion-icon>
-    </button>
+      <span style="margin: 3em"> </span>
+    <div ion-fab color="light" class="botao-like">
+      <img src="/assets/imgs/bh.png">
+    </div>
   </div>
 </ion-content>

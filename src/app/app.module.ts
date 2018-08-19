@@ -7,6 +7,7 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { ContentLoaderModule } from '@netbasal/content-loader';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { ChartsModule } from 'ng2-charts/charts/charts';
+import { SwingModule } from 'angular2-swing';
 
 import { TabsPage } from '../pages/tabs/tabs';
 import { ComponentsModule } from './../components/components.module';
@@ -16,6 +17,7 @@ import { MatchPage } from './../pages/match/match';
 import { PerfilPage } from './../pages/perfil/perfil';
 import { EditarPerfilPage } from './../pages/editar-perfil/editarPerfil';
 import { MyApp } from './app.component';
+import { CardsComponent } from '../components/cards/cards';
 
 @NgModule({
   declarations: [
@@ -26,6 +28,7 @@ import { MyApp } from './app.component';
     EditarPerfilPage,
     AnalyticsPage,
     MatchPage,
+    CardsComponent
   ],
   imports: [
     BrowserModule,
@@ -35,6 +38,7 @@ import { MyApp } from './app.component';
     IonicModule.forRoot(MyApp),
     ComponentsModule,
     HttpClientModule,
+    SwingModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -45,6 +49,7 @@ import { MyApp } from './app.component';
     EditarPerfilPage,
     AnalyticsPage,
     MatchPage,
+    CardsComponent
   ],
   providers: [
     StatusBar,

@@ -8,6 +8,7 @@ import {ChartsModule} from 'ng2-charts/charts/charts';
 import { ImageComponent } from './app-image/app-image';
 import { CardComponent } from './card/card.component';
 import { DonutChartTableComponent } from './donut-chart-table/donut-chart-table';
+import { CardsComponent } from './cards/cards';
 
 @NgModule({
   declarations: [CardComponent, ImageComponent,
