@@ -4,6 +4,7 @@ import { IonicPageModule } from 'ionic-angular';
 
 import { ComponentsModule } from './../../components/components.module';
 import { PerfilPage } from './perfil';
+import { FlexModule } from '@angular/flex-layout';
 
 @NgModule({
   declarations: [PerfilPage],
@@ -11,6 +12,7 @@ import { PerfilPage } from './perfil';
     IonicPageModule.forChild(PerfilPage),
     ContentLoaderModule,
     ComponentsModule,
+    FlexModule
   ],
 })
 export class PerfilPageModule {}

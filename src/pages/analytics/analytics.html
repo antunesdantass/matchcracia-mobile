@@ -5,13 +5,13 @@
   Ionic pages and navigation.
 -->
 <ion-content padding>
-  <div *ngIf="matches; else noMatch" fxLayout="column" class="analytics-container">
+  <div *ngIf="matches.length; else noMatch" fxLayout="column" class="analytics-container">
     <h4 text-center>Essa potência lhe representa!</h4>
     <div padding-top class="image-container">
       <app-image [src]="fotaDaMinhaPotencia" alt="Potencia"></app-image>
     </div>
     <div class="matches-container">
-      <div *ngIf="matches">
+      <div *ngIf="matches.length">
         <h4 text-center paddin-top>Seus matches</h4>
         <ion-list>
           <button ion-item *ngFor="let lei of matches" (click)="goToDetalhesLei(lei)">

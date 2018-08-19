@@ -4,6 +4,7 @@ import { IonicPageModule } from 'ionic-angular';
 
 import { ComponentsModule } from './../../components/components.module';
 import { EditarPerfilPage } from './editarPerfil';
+import { FlexModule } from '@angular/flex-layout';
 
 @NgModule({
   declarations: [EditarPerfilPage],
@@ -11,6 +12,7 @@ import { EditarPerfilPage } from './editarPerfil';
     IonicPageModule.forChild(EditarPerfilPage),
     ContentLoaderModule,
     ComponentsModule,
+    FlexModule
   ],
 })
 export class EditarPerfilPageModule {}
