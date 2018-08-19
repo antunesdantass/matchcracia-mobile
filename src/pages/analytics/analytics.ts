@@ -1,9 +1,9 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { IonicPage, NavController } from 'ionic-angular';
 import { includes } from 'lodash';
-import { DbService } from '../../providers/db.provider';
 import { Subscription } from 'rxjs/Subscription';
 
+import { DbService } from '../../providers/db.provider';
 import { DetalhesLeiPage } from './../detalhes-lei/detalhes-lei';
 
 /**
@@ -19,11 +19,11 @@ import { DetalhesLeiPage } from './../detalhes-lei/detalhes-lei';
   templateUrl: 'analytics.html',
 })
 export class AnalyticsPage implements OnInit, OnDestroy {
-  matches: any[];
+  matches: any[] = [];
   matchesSubscription: Subscription;
   fotaDaMinhaPotencia = '';
 
-  constructor(private dbService: DbService, private navCtrl: NavController) { }
+  constructor(private dbService: DbService, private navCtrl: NavController) {}
 
   getFotaDaMinhaPotencia() {
     if (!this.matches) return null;
@@ -41,8 +41,9 @@ export class AnalyticsPage implements OnInit, OnDestroy {
       {}
     );
     return Object.keys(ocorrenciasFotas).reduce(
-      (ac, fota) => (ocorrenciasFotas[ac] >= ocorrenciasFotas[fota] ? ac : fota)
-      , ''
+      (ac, fota) =>
+        ocorrenciasFotas[ac] >= ocorrenciasFotas[fota] ? ac : fota,
+      ''
     );
   }
 
@@ -71,16 +72,20 @@ export class AnalyticsPage implements OnInit, OnDestroy {
   }
 
   ngOnInit() {
-    this.matches = Object.keys(this.dbService.db.votos).map(k => {
-      const x = this.dbService.db.leis.filter(i => i.id == k);
-      return x.length && x[0] || null;
-    }).filter(x => !!x);
+    this.matches = Object.keys(this.dbService.db.votos)
+      .map(k => {
+        const x = this.dbService.db.leis.filter(i => i.id == k);
+        return (x.length && x[0]) || null;
+      })
+      .filter(x => !!x);
     this.dbService.db.votosChanged = () => {
       console.log(this.dbService.db);
-      this.matches = Object.keys(this.dbService.db.votos).map(k => {
-        const x = this.dbService.db.leis.filter(i => i.id == k);
-        return x.length && x[0] || null;
-      }).filter(i => !!i);
+      this.matches = Object.keys(this.dbService.db.votos)
+        .map(k => {
+          const x = this.dbService.db.leis.filter(i => i.id == k);
+          return (x.length && x[0]) || null;
+        })
+        .filter(i => !!i);
     };
     this.fotaDaMinhaPotencia = this.getFotaDaMinhaPotencia();
   }
