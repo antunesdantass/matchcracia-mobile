@@ -30,6 +30,7 @@
     "@netbasal/content-loader": "^1.1.0",
     "chart.js": "^2.7.2",
     "cordova-android": "7.0.0",
+    "cordova-ios": "4.5.5",
     "cordova-plugin-device": "^2.0.2",
     "cordova-plugin-ionic-keyboard": "^2.1.2",
     "cordova-plugin-ionic-webview": "^2.0.3",
@@ -57,7 +58,8 @@
       "cordova-plugin-ionic-keyboard": {}
     },
     "platforms": [
-      "android"
+      "android",
+      "ios"
     ]
   }
 }
