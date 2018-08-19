@@ -16,11 +16,15 @@ cards {
         position: absolute;
         text-align: center;
         top: 3%;
-        height: 26em;
+        height: 33em;
       }
 
       ion-card-header {
           color: white !important;
+      }
+
+      .card-md {
+        width: 100%;
       }
 
       ion-card-content {
@@ -30,7 +34,7 @@ cards {
           margin-left: 5px;
           margin-right: 5px;
           margin-bottom: 5px;
-          height: 22em;
+          height: 29em;
       }
 
       ion-item {
