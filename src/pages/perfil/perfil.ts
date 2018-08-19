@@ -20,7 +20,7 @@ export class PerfilPage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
     this.usuario = {
-      nome: "Thalyta",
+      nome: "Rodrigo",
       idade: 20,
       endereco: {
         cidade: "Campina Grande",
