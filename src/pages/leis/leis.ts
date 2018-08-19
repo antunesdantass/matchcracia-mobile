@@ -42,7 +42,6 @@ export class LeisPage {
   goToMatchPage() {
     const lei = this.leis[this.leis.length - 1];
     this.botaoVoto(true);
-    this.leis.pop();
     this.navCtrl.push(MatchPage, {
       lei: JSON.stringify(lei),
     });
