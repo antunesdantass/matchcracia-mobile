@@ -3,8 +3,6 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
 import { Platform } from 'ionic-angular';
 
-import { MatchPage } from './../pages/match/match';
-
 import { TabsPage } from '../pages/tabs/tabs';
 
 @Component({

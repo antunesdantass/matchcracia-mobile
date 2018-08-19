@@ -3,6 +3,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { HttpClient } from '@angular/common/http';
 
 import { MatchPage } from './../match/match';
+import { DbService } from '../../providers/db.provider';
 
 /**
  * Generated class for the LeisPage page.
@@ -19,15 +20,14 @@ import { MatchPage } from './../match/match';
 export class LeisPage {
   leis;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public http: HttpClient) {
-    this.http
-      .get<any[]>('assets/mockLeis.json')
-      .subscribe((dados: any[]) => {
-        this.leis = dados;
-      });
+  constructor(private dbService: DbService, public navCtrl: NavController, public navParams: NavParams, public http: HttpClient) {
+    this.leis = [...dbService.db.leis];
   }
+
   onSwipe = (votoPositivo: boolean, lei) => {
-    console.log("virou", lei)
+    if (votoPositivo)
+      this.dbService.db.votos[lei.id] = votoPositivo;
+    this.dbService.db.votosChanged();
   }
 
   goToMatchPage() {

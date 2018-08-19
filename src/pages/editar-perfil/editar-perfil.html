@@ -9,20 +9,20 @@
   </div>
   <ion-list>
     <ion-item>
-      <ion-label color="primary" floating ng-model="usuario.nome">Nome</ion-label>
-      <ion-input></ion-input>
+      <ion-label color="primary" floating>Nome</ion-label>
+      <ion-input name="nome" [(ngModel)]="usuario.nome"></ion-input>
     </ion-item>
     <ion-item>
-      <ion-label color="primary" floating ng-model="usuario.idade">Idade</ion-label>
-      <ion-input type="number"></ion-input>
+      <ion-label color="primary" floating>Idade</ion-label>
+      <ion-input type="number" name="idade" [(ngModel)]="usuario.idade"></ion-input>
     </ion-item>
     <ion-item>
-      <ion-label color="primary" floating ng-model="usuario.endereco.cidade">Cidade</ion-label>
-      <ion-input></ion-input>
+      <ion-label color="primary" floating>Cidade</ion-label>
+      <ion-input name="cidade" [(ngModel)]="usuario.endereco.cidade"></ion-input>
     </ion-item>
     <ion-item>
-      <ion-label color="primary" floating ng-model="usuario.estado">Estado</ion-label>
-      <ion-input></ion-input>
+      <ion-label color="primary" floating>Estado</ion-label>
+      <ion-input name="estado" [(ngModel)]="usuario.estado"></ion-input>
     </ion-item>
   </ion-list>
   <button class="salvar" ion-button full (click)="salvar()">Salvar</button>

@@ -19,6 +19,8 @@ import { EditarPerfilPage } from './../pages/editar-perfil/editarPerfil';
 import { MyApp } from './app.component';
 import { CardsComponent } from '../components/cards/cards';
 
+import {DbService} from '../providers/db.provider';
+
 @NgModule({
   declarations: [
     MyApp,
@@ -55,6 +57,7 @@ import { CardsComponent } from '../components/cards/cards';
     StatusBar,
     SplashScreen,
     { provide: ErrorHandler, useClass: IonicErrorHandler },
+    DbService
   ],
   exports: [],
 })

@@ -18,7 +18,6 @@ export class CardsComponent implements OnInit{
     public onSwipe: Function;
 
     ngOnInit() {
-        console.log(this.cards)
     }
 
     stackConfig = {
@@ -34,7 +33,6 @@ export class CardsComponent implements OnInit{
     };
     
     ngAfterViewInit() {
-        console.log(this.reprovo)
         this.setOpAp('0');
         this.setOpRe('0');
         // Either subscribe in controller or set in HTML

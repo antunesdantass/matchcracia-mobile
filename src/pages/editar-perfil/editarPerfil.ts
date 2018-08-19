@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import { LeisPage } from '../leis/leis';
+import { DbService } from '../../providers/db.provider';
 
 /**
  * Generated class for the EditarPerfilPage page.
@@ -18,11 +18,12 @@ export class EditarPerfilPage {
   window: any = window;
   usuario: any = {};
 
-  constructor(private navParams: NavParams, public navCtrl: NavController) {
-    this.usuario.nome = navParams.get('nome');
+  constructor(private dbService: DbService, public navCtrl: NavController) {
+    this.usuario = dbService.db.usuario;
   }
 
   salvar() {
+    this.dbService.db.usuarioChanged();
     if (this.navCtrl.canGoBack()) {
       return this.navCtrl.pop();
     }
@@ -30,6 +31,5 @@ export class EditarPerfilPage {
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad EditarPerfilPage');
   }
 }

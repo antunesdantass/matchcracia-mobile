@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { EditarPerfilPage } from '../editar-perfil/editarPerfil';
+import { DbService } from '../../providers/db.provider';
 
 /**
  * Generated class for the PerfilPage page.
@@ -18,23 +19,17 @@ export class PerfilPage {
   window: any = window;
   usuario: any = {};
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
-    this.usuario = {
-      nome: "Rodrigo",
-      idade: 20,
-      endereco: {
-        cidade: "Campina Grande",
-        estado: "PB"
-      }
+  constructor(private dbService: DbService, public navCtrl: NavController, public navParams: NavParams) {
+    this.usuario = dbService.db.usuario;
+    dbService.db.usuarioChanged = () => {
+      this.usuario = dbService.db.usuario;
     };
   }
 
   editarPerfil() {
-    console.log("entrou");
     this.navCtrl.push(EditarPerfilPage, this.usuario);
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad PerfilPage');
   }
 }

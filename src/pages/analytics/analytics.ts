@@ -1,8 +1,8 @@
-import { HttpClient } from '@angular/common/http';
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { IonicPage } from 'ionic-angular';
 import { Subscription } from 'rxjs/Subscription';
 import { includes } from 'lodash';
+import { DbService } from '../../providers/db.provider';
 
 /**
  * Generated class for the AnalyticsPage page.
@@ -21,7 +21,7 @@ export class AnalyticsPage implements OnInit, OnDestroy {
   matchesSubscription: Subscription;
   fotaDaMinhaPotencia = '';
 
-  constructor(private http: HttpClient) {}
+  constructor(private dbService: DbService) { }
 
   getFotaDaMinhaPotencia() {
     if (!this.matches) return null;
@@ -40,11 +40,12 @@ export class AnalyticsPage implements OnInit, OnDestroy {
     );
     return Object.keys(ocorrenciasFotas).reduce(
       (ac, fota) => (ocorrenciasFotas[ac] >= ocorrenciasFotas[fota] ? ac : fota)
+      , ''
     );
   }
 
   get donutSituacaoData() {
-    if (!this.matches) return [];
+    if (!this.matches || !this.matches.length) return {};
     const situacoesOcorrencias = {};
     const situacoes = this.matches
       .map(match => match.statusProposicao.descricaoSituacao)
@@ -64,12 +65,15 @@ export class AnalyticsPage implements OnInit, OnDestroy {
   }
 
   ngOnInit() {
-    this.matchesSubscription = this.http
-      .get<any[]>('assets/mockLeis.json')
-      .subscribe((dados: any[]) => {
-        this.matches = dados;
-        this.fotaDaMinhaPotencia = this.getFotaDaMinhaPotencia();
-      });
+    this.matches = Object.keys(this.dbService.db.votos).map(k => this.dbService.db.leis.find(i => i.id == k));
+    this.dbService.db.votosChanged = () => {
+      console.log(this.dbService.db);
+      this.matches = Object.keys(this.dbService.db.votos).map(k => this.dbService.db.leis.find(i => {
+        console.log('finding for', i, k)
+        return i.id == k;
+      })).filter(i => !!i);
+    };
+    this.fotaDaMinhaPotencia = this.getFotaDaMinhaPotencia();
   }
 
   ngOnDestroy(): void {
