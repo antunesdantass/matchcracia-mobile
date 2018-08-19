@@ -24,6 +24,11 @@ export class LeisPage {
     this.leis = [...dbService.db.leis];
   }
 
+  botaoVoto(votoPositivo: boolean) {
+    const lei = this.leis.pop();
+    this.onSwipe(votoPositivo, lei);
+  }
+
   onSwipe = (votoPositivo: boolean, lei) => {
     if (votoPositivo)
       this.dbService.db.votos[lei.id] = votoPositivo;
@@ -32,6 +37,7 @@ export class LeisPage {
 
   goToMatchPage() {
     const lei = this.leis[this.leis.length - 1];
+    this.botaoVoto(true);
     this.navCtrl.push(MatchPage, {
       lei: JSON.stringify(lei),
     });

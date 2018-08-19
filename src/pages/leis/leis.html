@@ -11,11 +11,11 @@
   </div>
   <div class="buttons-container" fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="1rem">
       <div class="botao-like">
-          <img src="/assets/imgs/bx.png">
+          <img src="/assets/imgs/bx.png" (click)="botaoVoto(false)">
       </div>
         <span style="margin: 3em"> </span>
       <div class="botao-like">
-        <img src="/assets/imgs/bh.png">
+        <img src="/assets/imgs/bh.png" (click)="goToMatchPage(true)">
       </div>
     </div>
 </ion-content>
