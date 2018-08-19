@@ -61,11 +61,19 @@ cards {
 
   .imagens {
     text-align: center;
-  align-content: center;
-  align-self: center;
+    align-content: center;
+    align-self: center;
     opacity: 0;
     vertical-align: middle;
   //   display: table-cell;
+  }
+
+  .img-direita {
+    // transform: rotate(45deg);
+  }
+
+  .img-esquerda {
+    // transform: rotate(135deg);
   }
 
   .container-imagem {
