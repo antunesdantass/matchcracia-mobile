@@ -1,6 +1,6 @@
+import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import { HttpClient } from '@angular/common/http';
 
 import { MatchPage } from './../match/match';
 
@@ -19,24 +19,23 @@ import { MatchPage } from './../match/match';
 export class LeisPage {
   leis;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public http: HttpClient) {
-    this.http
-      .get<any[]>('assets/mockLeis.json')
-      .subscribe((dados: any[]) => {
-        this.leis = dados;
-      });
+  constructor(
+    public navCtrl: NavController,
+    public navParams: NavParams,
+    public http: HttpClient
+  ) {
+    this.http.get<any[]>('assets/mockLeis.json').subscribe((dados: any[]) => {
+      this.leis = dados;
+    });
   }
   onSwipe = (votoPositivo: boolean, lei) => {
-    console.log("virou", lei)
-  }
+    console.log('virou', lei);
+  };
 
   goToMatchPage() {
+    const lei = this.leis[this.leis.length - 1];
     this.navCtrl.push(MatchPage, {
-      lei: JSON.stringify({
-        siglaTipo: 'PL',
-        numero: 9469,
-        ano: 2078,
-      }),
+      lei: JSON.stringify(lei),
     });
   }
 }
