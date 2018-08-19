@@ -1,8 +1,10 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { IonicPage } from 'ionic-angular';
-import { Subscription } from 'rxjs/Subscription';
+import { IonicPage, NavController } from 'ionic-angular';
 import { includes } from 'lodash';
+import { Subscription } from 'rxjs/Subscription';
+
+import { DetalhesLeiPage } from './../detalhes-lei/detalhes-lei';
 
 /**
  * Generated class for the AnalyticsPage page.
@@ -21,7 +23,7 @@ export class AnalyticsPage implements OnInit, OnDestroy {
   matchesSubscription: Subscription;
   fotaDaMinhaPotencia = '';
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient, private navCtrl: NavController) {}
 
   getFotaDaMinhaPotencia() {
     if (!this.matches) return null;
@@ -61,6 +63,10 @@ export class AnalyticsPage implements OnInit, OnDestroy {
       labels: situacoes,
       data: situacoes.map(situacao => situacoesOcorrencias[situacao]),
     };
+  }
+
+  goToDetalhesLei(lei) {
+    this.navCtrl.push(DetalhesLeiPage, { lei: JSON.stringify(lei) });
   }
 
   ngOnInit() {

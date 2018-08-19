@@ -14,7 +14,7 @@
       <div *ngIf="matches">
         <h4 text-center paddin-top>Seus matches</h4>
         <ion-list>
-          <button ion-item *ngFor="let lei of matches">
+          <button ion-item *ngFor="let lei of matches" (click)="goToDetalhesLei(lei)">
             <div fxLayout="column" fxLayoutGap="0.125em">
               <div fxLayout="row">
                 <div fxFlex="33">
