@@ -63,10 +63,10 @@ export class CardsComponent implements OnInit {
             if (x < 0) {
                 color = '#FF' + hexCode + hexCode;
                 this.setOpAp('0');;
-                this.setOpRe(Math.min(1, Math.abs(x) / 300));
+                this.setOpRe(Math.min(1, Math.abs(x) / 250));
             } else {
                 this.setOpRe('0');
-                this.setOpAp(Math.min(1, x / 300));
+                this.setOpAp(Math.min(1, x / 150));
                 color = '#' + hexCode + 'FF' + hexCode;
             }
         }

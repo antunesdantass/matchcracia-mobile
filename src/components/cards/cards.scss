@@ -65,15 +65,20 @@ cards {
     align-self: center;
     opacity: 0;
     vertical-align: middle;
+    width: 65%;
   //   display: table-cell;
   }
 
   .img-direita {
-    // transform: rotate(45deg);
+    transform: rotate(15deg);
+    margin-left: auto;
+    margin-right: 8%;
   }
 
   .img-esquerda {
-    // transform: rotate(135deg);
+    transform: rotate(-15deg);
+    margin-right: auto;
+    margin-left: 8%;
   }
 
   .container-imagem {
@@ -88,7 +93,7 @@ cards {
   .helper {
       display: inline-block;
       vertical-align: middle;
-      height: 50%;
+      height: 8%;
   } 
 }
 
